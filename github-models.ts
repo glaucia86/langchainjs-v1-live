@@ -7,12 +7,12 @@ const DEFAULT_API_VERSION = "2024-02-15-preview";
 const DEFAULT_MODEL = "gpt-4o";
 
 function buildClientOptions(modelName: string) {
-  const token = process.env.GITHUB_TOKEN;
+  const token = process.env.GITHUB_MODELS_TOKEN;
   const baseURL = process.env.GITHUB_MODELS_ENDPOINT ?? DEFAULT_ENDPOINT;
   const apiVersion = process.env.GITHUB_MODELS_API_VERSION ?? DEFAULT_API_VERSION;
 
   if (!token) {
-    throw new Error("GITHUB_TOKEN is not set in environment variables.");
+    throw new Error("GITHUB_MODELS_TOKEN is not set in environment variables.");
   }
 
   return {
